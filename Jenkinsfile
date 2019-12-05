@@ -7,7 +7,6 @@ node {
       sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'docker -v'
-      sh 'export NODE_ENV=production'
       sh 'printenv'
     }
     stage('Build') {
