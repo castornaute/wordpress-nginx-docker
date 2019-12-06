@@ -5,9 +5,9 @@ node {
     }
     stage('Environment') {
       sh 'git --version'
-      echo "Branch: ${env.BRANCH_NAME}"
       sh 'docker -v'
-      sh 'export NODE_ENV=production'
+      sh 'cp .env_example .env'
+      sh 'mkdir -p certs/ certs-data/ logs/nginx/ mysql/ wordpress/'
       sh 'printenv'
     }
     stage('Build') {
