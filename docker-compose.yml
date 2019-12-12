@@ -2,7 +2,7 @@ version: '3.6'
 services:
 
   wordpress:
-    image: wordpress:${WORDPRESS_VERSION:latest}
+    image: wordpress:latest
     container_name: wordpress
     volumes:
       - ${WORDPRESS_DATA_DIR:-./wordpress}:/var/www/html
