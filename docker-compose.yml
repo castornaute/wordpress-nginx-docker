@@ -23,8 +23,14 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
+      - VIRTUAL_HOST: castornaut.com
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-password}
       - MYSQL_USER=${MYSQL_USER:-root}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD:-password}
       - MYSQL_DATABASE=${MYSQL_DATABASE:-wordpress}
     restart: always
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
