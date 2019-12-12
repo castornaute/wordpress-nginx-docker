@@ -9,6 +9,7 @@ services:
     expose:
       - 80
     environment:
+      - VIRTUAL_HOST=test.castornaut.com
       - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME:-wordpress}
       - WORDPRESS_TABLE_PREFIX=${WORDPRESS_TABLE_PREFIX:-wp_}
       - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST:-mysql}
@@ -24,7 +25,6 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      - VIRTUAL_HOST=test.castornaut.com
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-password}
       - MYSQL_USER=${MYSQL_USER:-root}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD:-password}
