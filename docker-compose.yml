@@ -10,6 +10,8 @@ services:
       - 80
     environment:
       - VIRTUAL_HOST=castornaut.com
+      - LETSENCRYPT_HOST=castornaut.com
+      - LETSENCRYPT_EMAIL=ilyes.kahoul@castornaut.com
       - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME:-wordpress}
       - WORDPRESS_TABLE_PREFIX=${WORDPRESS_TABLE_PREFIX:-wp_}
       - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST:-mysql}
