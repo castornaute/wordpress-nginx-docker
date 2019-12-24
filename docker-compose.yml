@@ -39,8 +39,8 @@ services:
     links:
       - "mysql:mysql"
     environment:
-      - VIRTUAL_HOST=castornaut.com
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_HOST=phpmyadmin.castornaut.com
+      - LETSENCRYPT_HOST=phpmyadmin.castornaut.com
       - MYSQL_USERNAME=${MYSQL_USER:-root}
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD:-password}
     restart: always
