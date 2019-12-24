@@ -33,21 +33,21 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE:-wordpress}
     restart: always
 
-    phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      container_name: wordpress-phpmyadmin
-      links:
-        - "mysql:mysql"
-      environment:
-        - VIRTUAL_HOST=castornaut.com
-        - VIRTUAL_PORT=8080
-        - LETSENCRYPT_HOST=castornaut.com
-        - LETSENCRYPT_PORT=8080
-        - MYSQL_USERNAME=${MYSQL_USER:-root}
-        - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD:-password}
-      restart: always
-      expose:
-        - 80
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: wordpress-phpmyadmin
+    links:
+      - "mysql:mysql"
+    environment:
+      - VIRTUAL_HOST=castornaut.com
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=castornaut.com
+      - LETSENCRYPT_PORT=8080
+      - MYSQL_USERNAME=${MYSQL_USER:-root}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD:-password}
+    restart: always
+    expose:
+      - 80
 
 networks:
   default:
